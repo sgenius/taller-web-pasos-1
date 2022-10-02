@@ -1,0 +1,130 @@
+/* a minimalist set of CSS resets */
+
+/* default to border-box */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* adjust typography defaults */
+body {
+  margin: 1rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* images and videos max out at full width */
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+/* estilos propios de este sitio */
+
+body {
+  /*
+    Los colores se especifican en hexadecimal (del 00 al ff).
+    Los primeros dos dígitos son rojo, los siguientes son verde y los últimos son azul.
+    Mientras más alto el color, más de ese componente hay. 
+  
+    Este es un gris porque todos los componentes son iguales. Es oscuro, porque es un número bajo
+  */
+  color: #333333;
+  background-color: #ccccdd;
+
+  /*
+    Podemos ponerle cualquier tipografía. El riesgo es que si no existe en la computadora del usuario,
+    se verá diferente. Por eso definimos defaults: en este caso, si el usuario no tiene Verdana, se verá
+    con Arial.
+
+    El último es una "fuente del sistema" que siempre va a existir.
+  */
+  font-family: "Verdana", Arial, sans-serif;
+}
+
+h1 {
+  /*
+    Hay varias maneras de especificar tamaños.
+    La tradicional es "px", que significaba "pixeles" (p. ej. "14px") pero hoy día no funciona bien, debido
+    a los monitores de alta resolución.
+    Hoy en día se prefiere "rem", que es una proporción basada en el tamaño definido para html {}.
+    "rem" toma en cuenta diferentes monitores y configuraciones del usuario. 
+  */ 
+  font-size: 2.5rem;
+}
+
+h1, h2 {
+  font-family: "Garamond", "Times New Roman", Times, serif;
+}
+
+main {
+  float: left;
+  width: 67%;
+  margin-left: 3%;
+}
+
+nav {
+  /* Hay muchas reglas, cada una con diferentes opciones. Lo mejor es revisar la documentación y explorar */
+  border: 3px double #333333;
+
+  /* Esta es otra manera de definir colores. En este caso, el cuarto número, "alfa", es la opacidad:
+     0 es transparente y 1 es completamente opaco. */
+  background: rgba(255, 255, 255, 0.2);
+
+  float: left;
+  width: 30%;
+}
+
+nav ul {
+  /* En la navegación, queremos que la lista de enlaces no se vea como una lista. */
+  list-style-type: none;
+}
+
+nav li {
+  margin: 0.5rem 0;
+}
+
+nav a {
+  color: #114499;
+
+  /* Hay diferentes tipos de "display". Los dos principales son:
+    "block", que hace que las cosas ocupen el tamaño de una caja o bloque sólido dentro de la página
+    "inline", que hace que se comporten como texto que se escribe de corrido.
+
+    "a", "img" (para imágenes) y otros elementos que son primordialmente para texto se despliegan
+    como "block" por defecto.
+
+    Al darle "display: block", hacemos que el "a" ocupe el espacio de una caja. */
+  display: block;
+
+  /* 
+    "margin", "padding" y "border" son los tres elementos que le dan espaciado a un elemento.
+    Explicación: https://www.w3schools.com/css/css_boxmodel.asp
+    "margin" está por afuera del elemento y lo empuja. "padding" está por adentro. "border" es el borde
+    (cuenta como que está "adentro").
+  */
+  padding: 0.2rem 0.5rem;
+}
+
+nav a:hover {
+  background-color: #eeeebb;
+}
+
+nav a:visited {
+  color: #b020b0;
+}
+
+footer {
+  border-top: 3px double #333333;
+  
+  padding-top: 1rem;
+  margin-top: 1rem;
+  
+  font-size: 0.8rem;
+  text-align: center;
+}
